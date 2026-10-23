@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="sr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alexandar Studio | Software & SaaS Architecture</title>
+  <meta name="description" content="Alexandar Studio - Specijalizovan za razvoj SaaS rešenja, brze API servise, PWA aplikacije i Cloud infrastrukturu.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="img/logo-a.png">
+
+  <!-- Fonts & Tailwind -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            space: '#020308',
+            accent: {
+              cyan: '#38bdf8',
+              emerald: '#10b981',
+              gold: '#d4af37',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Three.js Import Map -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+</head>
+<body class="selection:bg-cyan-500/30 selection:text-cyan-200">
+
+  <!-- 3D Three.js Galaxy Background -->
+  <div id="webgl-bg"></div>
+
+  <!-- Glavni sloj sadržaja -->
+  <div class="content-layer">
+
+    <!-- Zaglavlje / Navigacija -->
+    <header class="sticky top-0 z-50 glass-nav">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        
+        <!-- Logo & Brand -->
+		<a href="#" class="flex items-center gap-2.5 group">
+		  <!-- Monogram A -->
+		  <img src="img/logo-a.png" alt="A" class="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-[0_0_8px_rgba(212,175,55,0.4)]">
+		  
+		  <div class="flex items-center gap-2">
+			<!-- Slika ALEXANDAR smanjena na h-5.5 / h-6 -->
+			<img src="img/logo-text.png" alt="Alexandar" class="h-5 sm:h-6 w-auto object-contain brightness-200 contrast-125">
+			
+			<!-- STUDIO fino usklađen uz novu visinu -->
+			<span class="text-[10px] font-mono tracking-[0.25em] text-slate-400 font-semibold uppercase group-hover:text-cyan-400 transition-colors">
+			  STUDIO
+			</span>
+		  </div>
+		</a>
+		<!-- Desktop navigacija -->
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="#projekti" class="text-sm font-medium text-slate-300 hover:text-white transition-colors" data-i18n="nav_projects">Projekti</a>
+          <a href="#stack" class="text-sm font-medium text-slate-300 hover:text-white transition-colors" data-i18n="nav_stack">Tehnologije</a>
+          <a href="#mreze" class="text-sm font-medium text-slate-300 hover:text-white transition-colors" data-i18n="nav_networks">Mreže</a>
+          <a href="#kontakt" class="text-sm font-medium text-slate-300 hover:text-white transition-colors" data-i18n="nav_contact">Kontakt</a>
+        </nav>
+
+        <!-- Desna kontrola: Jezik i CTA dugme -->
+        <div class="flex items-center gap-3">
+          <button id="langToggle" class="px-3 py-1.5 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 text-xs font-mono font-semibold transition-colors flex items-center gap-1.5" aria-label="Promeni jezik">
+            <span id="langCurrent" class="text-cyan-400">SR</span>
+            <span class="text-slate-500">/</span>
+            <span class="text-slate-400">EN</span>
+          </button>
+          
+          <a href="#kontakt" class="hidden sm:inline-flex sheen-btn px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 text-slate-950 font-bold text-xs tracking-wide shadow-lg shadow-cyan-500/20 hover:brightness-110 transition-all" data-i18n="nav_cta">
+            Započni projekat
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero sekcija -->
+      <section class="min-h-[calc(100vh-5rem)] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16">
+        <div class="max-w-4xl mx-auto text-center">
+          
+          <!-- Status bedž -->
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-950/40 backdrop-blur-md mb-8">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+            <span class="text-xs font-mono text-cyan-300 tracking-wide uppercase" data-i18n="hero_badge">Dostupan za nove projekte & saradnju</span>
+          </div>
+
+          <!-- Naslov -->
+			<h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white mb-6 leading-tight">
+			  <span data-i18n="hero_title_prefix">Inženjering modernih</span><br>
+			  <span class="text-stroke-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-emerald-400">
+				SaaS & Web Rešenja
+			  </span>
+			</h1>
+
+          <!-- Opis -->
+          <p class="text-base sm:text-xl text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed" data-i18n="hero_desc">
+            Razvijam brze web aplikacije, optimizovane API servise, PWA rešenja i pouzdanu Cloud infrastrukturu.
+          </p>
+
+          <!-- Glavna dugmad -->
+          <div class="flex flex-wrap items-center justify-center gap-4 mb-14">
+            <a href="#projekti" class="sheen-btn px-7 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 text-slate-950 font-bold text-sm shadow-xl shadow-cyan-500/20 hover:brightness-110 transition-all" data-i18n="hero_btn_projects">
+              Istraži projekte
+            </a>
+            <a href="#kontakt" class="px-7 py-3.5 rounded-xl border border-white/15 bg-slate-900/60 backdrop-blur-md text-white font-semibold text-sm hover:bg-slate-800/80 hover:border-cyan-400/50 transition-all" data-i18n="hero_btn_contact">
+              Stupi u kontakt
+            </a>
+          </div>
+
+          <!-- Brzi linkovi ka društvenim mrežama -->
+          <div class="pt-8 border-t border-white/10 flex flex-wrap items-center justify-center gap-3">
+            <a href="https://github.com/alexalbekstudio" target="_blank" rel="noopener noreferrer" title="GitHub" class="p-2.5 rounded-xl bg-slate-900/60 border border-white/10 hover:border-cyan-400 hover:text-cyan-400 transition-all text-slate-400">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+            <a href="https://tiktok.com/@alexandarstudio" target="_blank" rel="noopener noreferrer" title="TikTok" class="p-2.5 rounded-xl bg-slate-900/60 border border-white/10 hover:border-cyan-400 hover:text-cyan-400 transition-all text-slate-400">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+            </a>
+            <a href="https://instagram.com/alexandar.studio" target="_blank" rel="noopener noreferrer" title="Instagram" class="p-2.5 rounded-xl bg-slate-900/60 border border-white/10 hover:border-pink-500 hover:text-pink-400 transition-all text-slate-400">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://threads.net/@alexandar.studio" target="_blank" rel="noopener noreferrer" title="Threads" class="p-2.5 rounded-xl bg-slate-900/60 border border-white/10 hover:border-white hover:text-white transition-all text-slate-400">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.249 18.29 1.5 15.444 1.5 12.016 1.5 8.58 2.253 5.733 4.004 3.535 5.856 1.218 8.61.024 12.188 0h.015c3.604.024 6.38 1.222 8.251 3.562 1.739 2.175 2.478 5.006 2.478 8.414 0 .548-.02 1.111-.06 1.674h-4.04c.03-.435.045-.87.045-1.305 0-2.585-.506-4.664-1.547-6.181-1.258-1.834-3.21-2.793-5.795-2.813-2.613.02-4.577.979-5.838 2.85-1.076 1.597-1.598 3.734-1.598 6.353 0 2.618.522 4.755 1.598 6.352 1.261 1.872 3.225 2.831 5.838 2.851 2.115-.016 3.73-.63 4.801-1.826.657-.734 1.096-1.688 1.341-2.906-1.196-.445-2.227-1.127-3.037-2.029-.982-1.093-1.488-2.47-1.464-3.98.026-1.64.63-2.98 1.748-3.876 1.066-.855 2.493-1.298 4.129-1.282 1.701.017 3.16.516 4.218 1.442 1.05 1.01 1.621 2.378 1.65 3.96.046 2.532-.821 4.767-2.511 6.463-1.928 1.936-4.621 2.946-8.005 3.003zm2.593-9.428c-.015.748.243 1.43.727 1.92.484.49 1.144.757 1.86.757h.03c.535-.015 1.03-.135 1.472-.358-.337-1.373-1.114-2.247-2.31-2.593-.979.02-1.764.124-1.779.274z"/></svg>
+            </a>
+            <a href="https://facebook.com/alexandarstudio" target="_blank" rel="noopener noreferrer" title="Facebook" class="p-2.5 rounded-xl bg-slate-900/60 border border-white/10 hover:border-blue-500 hover:text-blue-400 transition-all text-slate-400">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://reddit.com/user/alexandarstudio" target="_blank" rel="noopener noreferrer" title="Reddit" class="p-2.5 rounded-xl bg-slate-900/60 border border-white/10 hover:border-orange-500 hover:text-orange-400 transition-all text-slate-400">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.197-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+            </a>
+            <a href="https://youtube.com/@alexandarstudio" target="_blank" rel="noopener noreferrer" title="YouTube" class="p-2.5 rounded-xl bg-slate-900/60 border border-white/10 hover:border-red-500 hover:text-red-400 transition-all text-slate-400">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+            <a href="https://twitter.com/alexandarstudio" target="_blank" rel="noopener noreferrer" title="X (Twitter)" class="p-2.5 rounded-xl bg-slate-900/60 border border-white/10 hover:border-white hover:text-white transition-all text-slate-400">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" title="LinkedIn" class="p-2.5 rounded-xl bg-slate-900/60 border border-white/10 hover:border-sky-500 hover:text-sky-400 transition-all text-slate-400">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.762-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Sekcija Projekata -->
+      <section id="projekti" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="mb-14">
+          <div class="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-2" data-i18n="projects_tag">Izvedeni Radovi</div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white" data-i18n="projects_title">Projekti u Produkciji</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          <!-- MicroStock Kartica -->
+          <div class="glass-card rounded-2xl p-7 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="px-2.5 py-1 rounded-md text-[11px] font-mono font-medium bg-cyan-950/80 text-cyan-300 border border-cyan-800/40">SaaS Platform</span>
+                <span class="text-xs text-emerald-400 font-mono flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span> Live
+                </span>
+              </div>
+              <h3 class="text-2xl font-bold text-white mb-2">MicroStock</h3>
+              <p class="text-sm text-slate-300 leading-relaxed mb-6" data-i18n="project_ms_desc">
+                SaaS analitička platforma za autore na microstock agencijama. Automatizovano praćenje zarada, prodaje i portfolio metrika sa naprednim izveštavanjem.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="px-2.5 py-1 rounded text-xs font-mono bg-white/5 border border-white/10 text-slate-300">Python</span>
+                <span class="px-2.5 py-1 rounded text-xs font-mono bg-white/5 border border-white/10 text-slate-300">FastAPI</span>
+                <span class="px-2.5 py-1 rounded text-xs font-mono bg-white/5 border border-white/10 text-slate-300">PostgreSQL</span>
+                <span class="px-2.5 py-1 rounded text-xs font-mono bg-white/5 border border-white/10 text-slate-300">Docker</span>
+              </div>
+            </div>
+            <a href="https://microstocklanding.alexandar.studio" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-cyan-400 hover:text-cyan-300 transition-colors">
+              <span data-i18n="project_link">Poseti landing stranicu</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+          </div>
+
+          <!-- Kuća App Kartica -->
+          <div class="glass-card rounded-2xl p-7 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="px-2.5 py-1 rounded-md text-[11px] font-mono font-medium bg-emerald-950/80 text-emerald-300 border border-emerald-800/40">PWA Application</span>
+                <span class="text-xs text-emerald-400 font-mono flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span> Private Cloud
+                </span>
+              </div>
+              <h3 class="text-2xl font-bold text-white mb-2">Kuća App</h3>
+              <p class="text-sm text-slate-300 leading-relaxed mb-6" data-i18n="project_kuca_desc">
+                Specijalizovana Progressive Web App aplikacija za budžetiranje, evidenciju troškova po fazama gradnje, skladištenje računa i praćenje građevinskih radova.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="px-2.5 py-1 rounded text-xs font-mono bg-white/5 border border-white/10 text-slate-300">FastAPI</span>
+                <span class="px-2.5 py-1 rounded text-xs font-mono bg-white/5 border border-white/10 text-slate-300">PostgreSQL</span>
+                <span class="px-2.5 py-1 rounded text-xs font-mono bg-white/5 border border-white/10 text-slate-300">PWA</span>
+                <span class="px-2.5 py-1 rounded text-xs font-mono bg-white/5 border border-white/10 text-slate-300">Nginx</span>
+              </div>
+            </div>
+            <div class="text-xs font-mono text-slate-400" data-i18n="project_kuca_deploy">
+              Pokrenuto na samostalnoj VPS infrastrukturi (Hetzner + Coolify)
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Sekcija Tehnologija -->
+      <section id="stack" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="mb-14">
+          <div class="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-2" data-i18n="stack_tag">Inženjerski Fokus</div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white" data-i18n="stack_title">Tehnološki Ekosistem</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="glass-card rounded-2xl p-6">
+            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-4 font-mono font-bold">BE</div>
+            <h3 class="text-lg font-bold text-white mb-2">Backend & API</h3>
+            <p class="text-sm text-slate-300 mb-4" data-i18n="stack_be_desc">Brza, asinhrona i skalabilna serverska arhitektura sa fokusom na pouzdanost i performanse.</p>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2 py-0.5 rounded text-xs font-mono bg-white/5 text-slate-300">Python</span>
+              <span class="px-2 py-0.5 rounded text-xs font-mono bg-white/5 text-slate-300">FastAPI</span>
+              <span class="px-2 py-0.5 rounded text-xs font-mono bg-white/5 text-slate-300">Flask</span>
+              <span class="px-2 py-0.5 rounded text-xs font-mono bg-white/5 text-slate-300">PostgreSQL</span>
+            </div>
+          </div>
+
+          <div class="glass-card rounded-2xl p-6">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-4 font-mono font-bold">FE</div>
+            <h3 class="text-lg font-bold text-white mb-2">Web & PWA</h3>
+            <p class="text-sm text-slate-300 mb-4" data-i18n="stack_fe_desc">Moderni, lagani i optimizovani korisnički interfejsi sa mogućnostima offline rada i brzim učitavanjem.</p>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2 py-0.5 rounded text-xs font-mono bg-white/5 text-slate-300">PWA</span>
+              <span class="px-2 py-0.5 rounded text-xs font-mono bg-white/5 text-slate-300">JavaScript</span>
+              <span class="px-2 py-0.5 rounded text-xs font-mono bg-white/5 text-slate-300">Tailwind CSS</span>
+              <span class="px-2 py-0.5 rounded text-xs font-mono bg-white/5 text-slate-300">HTML5/CSS3</span>
+            </div>
+          </div>
+
+          <div class="glass-card rounded-2xl p-6">
+            <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-4 font-mono font-bold">OPS</div>
+            <h3 class="text-lg font-bold text-white mb-2">DevOps & Cloud</h3>
+            <p class="text-sm text-slate-300 mb-4" data-i18n="stack_ops_desc">Samostalno hostovana infrastruktura, kontejnerizacija, automatski SSL i Traefik reverse proxy.</p>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2 py-0.5 rounded text-xs font-mono bg-white/5 text-slate-300">Docker</span>
+              <span class="px-2 py-0.5 rounded text-xs font-mono bg-white/5 text-slate-300">Coolify</span>
+              <span class="px-2 py-0.5 rounded text-xs font-mono bg-white/5 text-slate-300">Hetzner VPS</span>
+              <span class="px-2 py-0.5 rounded text-xs font-mono bg-white/5 text-slate-300">Nginx / Traefik</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sekcija Društvenih Mreža -->
+      <section id="mreze" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="mb-14 text-center">
+          <div class="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-2" data-i18n="nav_networks">Mreže</div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white" data-i18n="networks_title">Povežimo se na Mrežama</h2>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
+          <a href="https://github.com/alexalbekstudio" target="_blank" rel="noopener noreferrer" class="glass-card rounded-xl p-5 flex items-center gap-3.5 hover:border-cyan-400 group">
+            <div class="p-2.5 rounded-lg bg-white/5 text-slate-300 group-hover:text-cyan-400 transition-colors">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </div>
+            <div>
+              <div class="text-sm font-bold text-white">GitHub</div>
+              <div class="text-xs text-slate-400 font-mono">@alexalbekstudio</div>
+            </div>
+          </a>
+
+          <a href="https://tiktok.com/@alexandarstudio" target="_blank" rel="noopener noreferrer" class="glass-card rounded-xl p-5 flex items-center gap-3.5 hover:border-cyan-400 group">
+            <div class="p-2.5 rounded-lg bg-white/5 text-slate-300 group-hover:text-cyan-400 transition-colors">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+            </div>
+            <div>
+              <div class="text-sm font-bold text-white">TikTok</div>
+              <div class="text-xs text-slate-400 font-mono">@alexandarstudio</div>
+            </div>
+          </a>
+
+          <a href="https://instagram.com/alexandar.studio" target="_blank" rel="noopener noreferrer" class="glass-card rounded-xl p-5 flex items-center gap-3.5 hover:border-pink-500 group">
+            <div class="p-2.5 rounded-lg bg-white/5 text-slate-300 group-hover:text-pink-400 transition-colors">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </div>
+            <div>
+              <div class="text-sm font-bold text-white">Instagram</div>
+              <div class="text-xs text-slate-400 font-mono">@alexandar.studio</div>
+            </div>
+          </a>
+
+          <a href="https://threads.net/@alexandar.studio" target="_blank" rel="noopener noreferrer" class="glass-card rounded-xl p-5 flex items-center gap-3.5 hover:border-white group">
+            <div class="p-2.5 rounded-lg bg-white/5 text-slate-300 group-hover:text-white transition-colors">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.249 18.29 1.5 15.444 1.5 12.016 1.5 8.58 2.253 5.733 4.004 3.535 5.856 1.218 8.61.024 12.188 0h.015c3.604.024 6.38 1.222 8.251 3.562 1.739 2.175 2.478 5.006 2.478 8.414 0 .548-.02 1.111-.06 1.674h-4.04c.03-.435.045-.87.045-1.305 0-2.585-.506-4.664-1.547-6.181-1.258-1.834-3.21-2.793-5.795-2.813-2.613.02-4.577.979-5.838 2.85-1.076 1.597-1.598 3.734-1.598 6.353 0 2.618.522 4.755 1.598 6.352 1.261 1.872 3.225 2.831 5.838 2.851 2.115-.016 3.73-.63 4.801-1.826.657-.734 1.096-1.688 1.341-2.906-1.196-.445-2.227-1.127-3.037-2.029-.982-1.093-1.488-2.47-1.464-3.98.026-1.64.63-2.98 1.748-3.876 1.066-.855 2.493-1.298 4.129-1.282 1.701.017 3.16.516 4.218 1.442 1.05 1.01 1.621 2.378 1.65 3.96.046 2.532-.821 4.767-2.511 6.463-1.928 1.936-4.621 2.946-8.005 3.003zm2.593-9.428c-.015.748.243 1.43.727 1.92.484.49 1.144.757 1.86.757h.03c.535-.015 1.03-.135 1.472-.358-.337-1.373-1.114-2.247-2.31-2.593-.979.02-1.764.124-1.779.274z"/></svg>
+            </div>
+            <div>
+              <div class="text-sm font-bold text-white">Threads</div>
+              <div class="text-xs text-slate-400 font-mono">@alexandar.studio</div>
+            </div>
+          </a>
+
+          <a href="https://facebook.com/alexandarstudio" target="_blank" rel="noopener noreferrer" class="glass-card rounded-xl p-5 flex items-center gap-3.5 hover:border-blue-500 group">
+            <div class="p-2.5 rounded-lg bg-white/5 text-slate-300 group-hover:text-blue-400 transition-colors">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </div>
+            <div>
+              <div class="text-sm font-bold text-white">Facebook</div>
+              <div class="text-xs text-slate-400 font-mono">alexandarstudio</div>
+            </div>
+          </a>
+
+          <a href="https://reddit.com/user/alexandarstudio" target="_blank" rel="noopener noreferrer" class="glass-card rounded-xl p-5 flex items-center gap-3.5 hover:border-orange-500 group">
+            <div class="p-2.5 rounded-lg bg-white/5 text-slate-300 group-hover:text-orange-400 transition-colors">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.197-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+            </div>
+            <div>
+              <div class="text-sm font-bold text-white">Reddit</div>
+              <div class="text-xs text-slate-400 font-mono">u/alexandarstudio</div>
+            </div>
+          </a>
+
+          <a href="https://youtube.com/@alexandarstudio" target="_blank" rel="noopener noreferrer" class="glass-card rounded-xl p-5 flex items-center gap-3.5 hover:border-red-500 group">
+            <div class="p-2.5 rounded-lg bg-white/5 text-slate-300 group-hover:text-red-400 transition-colors">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </div>
+            <div>
+              <div class="text-sm font-bold text-white">YouTube</div>
+              <div class="text-xs text-slate-400 font-mono">@alexandarstudio</div>
+            </div>
+          </a>
+
+          <a href="https://twitter.com/alexandarstudio" target="_blank" rel="noopener noreferrer" class="glass-card rounded-xl p-5 flex items-center gap-3.5 hover:border-white group">
+            <div class="p-2.5 rounded-lg bg-white/5 text-slate-300 group-hover:text-white transition-colors">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </div>
+            <div>
+              <div class="text-sm font-bold text-white">X (Twitter)</div>
+              <div class="text-xs text-slate-400 font-mono">@alexandarstudio</div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- Sekcija Kontakt -->
+      <section id="kontakt" class="py-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+        <div class="glass-card rounded-3xl p-8 sm:p-12 text-center">
+          <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 flex items-center justify-center mx-auto mb-6">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4" data-i18n="contact_title">Započnimo saradnju</h2>
+          <p class="text-slate-300 max-w-lg mx-auto mb-8 text-sm sm:text-base leading-relaxed" data-i18n="contact_desc">
+            Imate ideju za SaaS proizvod, potrebu za razvojem namenskog softvera ili želite automatizaciju procesa? Javite se direktno.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <a href="mailto:alexalbekstudio.design@gmail.com" class="sheen-btn w-full sm:w-auto px-6 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 text-slate-950 font-bold text-sm shadow-xl shadow-cyan-500/20 hover:brightness-110 transition-all flex items-center justify-center gap-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"/></svg>
+              <span>Pošalji Email</span>
+            </a>
+            <button id="copyEmailBtn" class="w-full sm:w-auto px-5 py-3.5 rounded-xl border border-white/10 bg-slate-900/60 hover:bg-slate-800 text-slate-300 font-mono text-xs flex items-center justify-center gap-2 transition-all">
+              <span>alexalbekstudio.design@gmail.com</span>
+              <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
+            </button>
+          </div>
+          <div id="copyToast" class="text-xs font-mono text-emerald-400 mt-3 opacity-0 transition-opacity">✓ Adresa kopirana u clipboard!</div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 py-12 px-4 sm:px-6 lg:px-8 text-center">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+        
+        <div class="flex items-center gap-3">
+          <img src="img/logo-a.png" alt="A Monogram" class="h-8 w-auto object-contain">
+          <img src="img/logo-text.png" alt="Alexandar Studio" class="h-4 w-auto object-contain opacity-80">
+        </div>
+
+        <div class="text-xs font-mono text-slate-500">
+          © 2026 alexandar.studio. Sva prava zadržana.
+        </div>
+
+        <div class="text-xs font-mono text-slate-500">
+          Pančevo, Srbija / Remote Worldwide
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Učitavanje skripti -->
+  <script src="js/galaxy.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
