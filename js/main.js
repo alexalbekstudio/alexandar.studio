@@ -25,7 +25,15 @@ const translations = {
     stack_ops_desc: "Samostalno hostovana infrastruktura, kontejnerizacija, automatski SSL i Traefik reverse proxy.",
     networks_title: "Povežimo se na Mrežama",
     contact_title: "Započnimo saradnju",
-    contact_desc: "Imate ideju za SaaS proizvod, potrebu za razvojem namenskog softvera ili želite automatizaciju procesa? Javite se direktno."
+    contact_desc: "Imate ideju za SaaS proizvod, potrebu za razvojem namenskog softvera ili želite automatizaciju procesa? Javite se direktno.",
+    btn_visit_landing: "Poseti landing stranicu",
+    btn_open_app: "Pokreni aplikaciju",
+    proj_microstock_desc: "Zvanična prezentaciona stranica za SaaS platformu sa cenovnim planovima i pregledom mogućnosti.",
+    proj_microapp_desc: "Kompletna analitička SaaS platforma za autore na microstock agencijama sa automatskim praćenjem metrika i zarada.",
+    proj_kuca_desc: "Specijalizovana PWA aplikacija za budžetiranje, evidenciju računa i praćenje troškova izgradnje kuće.",
+    proj_upcoming_title: "Uskoro Dolazi",
+    proj_upcoming_desc: "Novi softverski projekat i SaaS rešenje fokusirano na automatizaciju i desktop performanse trenutno je u fazi razvoja.",
+    proj_upcoming_status: "Najava uskoro • Stay tuned",
   },
   en: {
     nav_role: "Software & SaaS",
@@ -52,7 +60,15 @@ const translations = {
     stack_ops_desc: "Self-hosted VPS infrastructure, multi-container deployments, automated SSL, and Traefik reverse proxying.",
     networks_title: "Connect Across Networks",
     contact_title: "Let's Build Together",
-    contact_desc: "Have a SaaS idea, require custom software architecture, or want to automate business workflows? Let's connect."
+    contact_desc: "Have a SaaS idea, require custom software architecture, or want to automate business workflows? Let's connect.",
+    btn_visit_landing: "Visit Landing Page",
+    btn_open_app: "Launch Application",
+    proj_microstock_desc: "Official landing page for the microstock analytics SaaS platform featuring pricing tiers and feature showcases.",
+    proj_microapp_desc: "Comprehensive analytics SaaS platform for microstock contributors with automated revenue tracking and metrics.",
+    proj_kuca_desc: "Specialized Progressive Web App for home construction budgeting, expense logging, and receipt management.",
+    proj_upcoming_title: "Coming Soon",
+    proj_upcoming_desc: "A brand new software and SaaS solution focused on workflow automation and modern desktop architecture is currently in active development.",
+    proj_upcoming_status: "Announcement Soon • Stay tuned",
   }
 };
 
