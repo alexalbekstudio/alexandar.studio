@@ -117,10 +117,10 @@ starGeometry.setAttribute('position', new THREE.BufferAttribute(starPositions, 3
 
 const starMaterial = new THREE.PointsMaterial({
   color: 0xffffff,
-  size: 0.6,
+  size: 0.4,
   sizeAttenuation: true,
   transparent: true,
-  opacity: 0.8
+  opacity: 0.6
 });
 
 const stars = new THREE.Points(starGeometry, starMaterial);

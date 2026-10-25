@@ -34,6 +34,8 @@ const translations = {
     proj_upcoming_title: "Uskoro Dolazi",
     proj_upcoming_desc: "Novi softverski projekat i SaaS rešenje fokusirano na automatizaciju i desktop performanse trenutno je u fazi razvoja.",
     proj_upcoming_status: "Najava uskoro • Stay tuned",
+    proj_housebuilding_desc: "Sveobuhvatna SaaS platforma za upravljanje gradnjom kuće, praćenje faza radova, kontrolu budžeta, evidenciju računa i foto-dokumentaciju gradilišta.",
+    btn_send_email: "Pošalji Email",
   },
   en: {
     nav_role: "Software & SaaS",
@@ -69,6 +71,11 @@ const translations = {
     proj_upcoming_title: "Coming Soon",
     proj_upcoming_desc: "A brand new software and SaaS solution focused on workflow automation and modern desktop architecture is currently in active development.",
     proj_upcoming_status: "Announcement Soon • Stay tuned",
+    proj_microstock_desc: "Official landing page for the microstock analytics SaaS platform featuring pricing tiers and feature showcases.",
+    proj_housebuilding_desc: "Comprehensive SaaS platform for home construction management, progress tracking, budget oversight, receipt archiving, and on-site photo documentation.",
+    contact_title: "Let's Build Together",
+    contact_desc: "Have a SaaS concept in mind, need custom software architecture, or want to automate business workflows? Let's connect.",
+    btn_send_email: "Send Email",
   }
 };
 
