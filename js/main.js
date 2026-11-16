@@ -36,6 +36,7 @@ const translations = {
     proj_upcoming_status: "Najava uskoro • Stay tuned",
     proj_housebuilding_desc: "Sveobuhvatna SaaS platforma za upravljanje gradnjom kuće, praćenje faza radova, kontrolu budžeta, evidenciju računa i foto-dokumentaciju gradilišta.",
     btn_send_email: "Pošalji Email",
+    proj_servismaster_desc: "Sveobuhvatna SaaS platforma za upravljanje auto-servisima, prijem vozila, radne naloge, praćenje delova, magacin i automatsku fiskalizaciju.",
   },
   en: {
     nav_role: "Software & SaaS",
@@ -76,6 +77,7 @@ const translations = {
     contact_title: "Let's Build Together",
     contact_desc: "Have a SaaS concept in mind, need custom software architecture, or want to automate business workflows? Let's connect.",
     btn_send_email: "Send Email",
+    proj_servismaster_desc: "Comprehensive SaaS platform for auto repair shop management, vehicle reception, work orders, parts inventory, and automated invoicing.",
   }
 };
 

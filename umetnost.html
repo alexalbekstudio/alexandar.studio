@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="sr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Umetnost | Aleksandar Studio</title>
+  <meta name="description" content="Autorski umetnički radovi, digitalna ilustracija i kreativne vizuelne forme.">
+  <link rel="icon" type="image/png" href="img/logo-a.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body class="selection:bg-purple-500/30 selection:text-purple-200">
+  <div id="webgl-bg"></div>
+  <div class="content-layer">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 glass-nav">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-2.5 group">
+          <img src="img/logo-a.png" alt="A" class="h-10 w-auto object-contain">
+          <span class="text-xs font-mono tracking-[0.25em] text-slate-400 font-semibold uppercase">STUDIO</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Početna</a>
+          <a href="dizajn.html" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Dizajn</a>
+          <a href="umetnost.html" class="text-sm font-medium text-purple-400 font-semibold transition-colors">Umetnost</a>
+          <a href="index.html#kontakt" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Kontakt</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-mono uppercase tracking-[0.25em] text-purple-400 font-semibold">Kreativni Izraz & Vizuelne Forme</span>
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-white mt-3 mb-6">Umetnost & Autorski Radovi</h1>
+        <p class="text-slate-300 text-lg leading-relaxed">
+          Istraživanje dubljih slojeva vizuelne estetike, digitalnog stvaralaštva i unikatnih umetničkih formi koje prevazilaze standardne okvire dizajna.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="rounded-2xl bg-slate-900/60 border border-slate-800 p-6 backdrop-blur-md">
+          <div class="h-48 rounded-xl bg-slate-800/50 mb-4 flex items-center justify-center text-slate-500 font-mono text-xs">[ Digitalna Ilustracija ]</div>
+          <h3 class="text-xl font-bold text-white mb-2">Digitalno Stvaralaštvo</h3>
+          <p class="text-slate-400 text-sm">Eksperimentisanje sa modernim digitalnim medijima, svetlom, formom i atmosferom.</p>
+        </div>
+        <div class="rounded-2xl bg-slate-900/60 border border-slate-800 p-6 backdrop-blur-md">
+          <div class="h-48 rounded-xl bg-slate-800/50 mb-4 flex items-center justify-center text-slate-500 font-mono text-xs">[ Konceptualni Radovi ]</div>
+          <h3 class="text-xl font-bold text-white mb-2">Konceptualne Forme</h3>
+          <p class="text-slate-400 text-sm">Vizuelne priče koje spajaju tehničku preciznost i slobodnu umetničku ekspresiju.</p>
+        </div>
+        <div class="rounded-2xl bg-slate-900/60 border border-slate-800 p-6 backdrop-blur-md">
+          <div class="h-48 rounded-xl bg-slate-800/50 mb-4 flex items-center justify-center text-slate-500 font-mono text-xs">[ Vizuelne Eksperimente ]</div>
+          <h3 class="text-xl font-bold text-white mb-2">Eksperimentalna Vizuelnost</h3>
+          <p class="text-slate-400 text-sm">Igre tekstura, kompozicije i interakcije između tradicionalnih i modernih grafičkih elemenata.</p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="border-t border-white/10 py-12 px-4 text-center text-xs font-mono text-slate-500">
+      © 2026 alexandar.studio. Sva prava zadržana.
+    </footer>
+  </div>
+  <script src="js/galaxy.js"></script>
+</body>
+</html>
