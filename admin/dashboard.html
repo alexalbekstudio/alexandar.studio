@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | Alexandar Studio</title>
+  <meta name="robots" content="noindex, nofollow">
+
+  <link rel="icon" type="image/png" href="../img/logo-a.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: #020308;
+      color: #e2e8f0;
+    }
+    .mono { font-family: 'JetBrains Mono', monospace; }
+  </style>
+</head>
+<body class="min-h-screen">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-slate-950/90 backdrop-blur-md border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <img src="../img/logo-a.png" alt="A" class="h-8">
+        <div>
+          <div class="text-sm font-bold text-white leading-tight">Alexandar Admin</div>
+          <div class="text-[10px] mono text-cyan-400 tracking-widest">CMS v1.0</div>
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <span id="userName" class="hidden sm:inline text-xs mono text-slate-400"></span>
+        <a href="/" target="_blank" class="text-xs mono px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-cyan-400 hover:border-cyan-500/50 transition">↗ Sajt</a>
+        <button id="logoutBtn" class="text-xs mono px-3 py-1.5 rounded-lg bg-red-500/10 text-red-400 border border-red-500/30 hover:bg-red-500/20 transition">Logout</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8 grid grid-cols-1 lg:grid-cols-[240px_1fr] gap-6">
+
+    <!-- Sidebar -->
+    <aside class="space-y-2">
+      <button data-tab="index" class="tab-btn w-full text-left px-4 py-3 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 font-semibold text-sm transition">📄 Index stranica</button>
+      <button data-tab="dizajn" class="tab-btn w-full text-left px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:bg-slate-800 font-semibold text-sm transition">🎨 Dizajn</button>
+      <button data-tab="umetnost" class="tab-btn w-full text-left px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:bg-slate-800 font-semibold text-sm transition">🖼️ Umetnost</button>
+      <button data-tab="microstock" class="tab-btn w-full text-left px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:bg-slate-800 font-semibold text-sm transition">🚀 MicroStock</button>
+      <button data-tab="housebuilding" class="tab-btn w-full text-left px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:bg-slate-800 font-semibold text-sm transition">🏠 House Building</button>
+      <button data-tab="servicemaster" class="tab-btn w-full text-left px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:bg-slate-800 font-semibold text-sm transition">🔧 ServiceMaster</button>
+    </aside>
+
+    <!-- Main -->
+    <main id="editorArea" class="space-y-6">
+      <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-10 text-center">
+        <p class="text-slate-400 text-sm">Učitavanje...</p>
+      </div>
+    </main>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

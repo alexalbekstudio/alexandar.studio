@@ -1,0 +1,229 @@
+{
+  "hero": {
+    "title_sr": "Upravljaj servisom bez papira.",
+    "title_en": "Run your auto shop without paperwork.",
+    "accent_sr": "ServiceMasterOS",
+    "accent_en": "ServiceMasterOS",
+    "desc_sr": "Sveobuhvatna platforma za auto-servise. Prijem vozila, radni nalozi, magacin delova i automatska fiskalizacija — na jednom mestu.",
+    "desc_en": "Comprehensive platform for auto repair shops. Vehicle intake, work orders, parts inventory, and automated invoicing — all in one place.",
+    "badge_sr": "Dostupno: Server • Desktop (Standalone)",
+    "badge_en": "Available: Server • Desktop (Standalone)",
+    "note_sr": "✓ Bez mesečne pretplate · ✓ Samostalna instalacija · ✓ Fiskalizacija",
+    "note_en": "✓ No monthly subscription · ✓ Self-hosted · ✓ Invoicing"
+  },
+  "images": {
+    "hero": "../landing/img/sm-hero-1.jpg",
+    "feat1": "../landing/img/sm-feature-1.jpg",
+    "feat2": "../landing/img/sm-feature-2.jpg",
+    "feat3": "../landing/img/sm-feature-3.jpg",
+    "feat4": "../landing/img/sm-feature-4.jpg"
+  },
+  "features": [
+    {
+      "icon": "📝",
+      "title_sr": "Radni nalozi",
+      "title_en": "Work Orders",
+      "desc_sr": "Kreirajte naloge u 10 sekundi. Vozilo, vlasnik, opis kvara, dodela majstora i delova.",
+      "desc_en": "Create work orders in 10 seconds. Vehicle, owner, fault description, mechanic and parts assignment."
+    },
+    {
+      "icon": "📦",
+      "title_sr": "Magacin delova",
+      "title_en": "Parts Inventory",
+      "desc_sr": "Automatsko skidanje sa stanja kada se deo doda na radni nalog. Alarm za niske zalihe.",
+      "desc_en": "Automatic stock deduction when a part is added to a work order. Low-stock alerts."
+    },
+    {
+      "icon": "🧾",
+      "title_sr": "Fiskalizacija",
+      "title_en": "Invoicing",
+      "desc_sr": "Generisanje i štampa fiskalnih računa direktno iz naloga, usklađeno sa zakonom.",
+      "desc_en": "Generate and print invoices directly from work orders, fully compliant with regulations."
+    },
+    {
+      "icon": "📊",
+      "title_sr": "Analitika i izveštaji",
+      "title_en": "Analytics & Reports",
+      "desc_sr": "Pratite prihod, profit, najčešće kvarove i produktivnost majstora.",
+      "desc_en": "Track revenue, profit, most common faults, and mechanic productivity."
+    }
+  ],
+  "pricing": [
+    {
+      "variant": "desktop",
+      "name": "🟢 Basic (Desktop)",
+      "name_en": "🟢 Basic (Desktop)",
+      "price": "49€ jednokratno",
+      "price_en": "€49 one-time",
+      "priceValue": "5900",
+      "features": [
+        "1 korisnik",
+        "Neograničen broj naloga",
+        "Digitalna servisna knjiga (VIN)",
+        "PDF radni nalozi i predračuni",
+        "Osnovni magacin (100 artikala)",
+        "Email podrška"
+      ],
+      "features_en": [
+        "1 user",
+        "Unlimited work orders",
+        "Digital service book (VIN)",
+        "PDF work orders & estimates",
+        "Basic inventory (100 items)",
+        "Email support"
+      ]
+    },
+    {
+      "variant": "desktop",
+      "name": "🚀 Pro (Desktop)",
+      "name_en": "🚀 Pro (Desktop)",
+      "price": "99€ jednokratno",
+      "price_en": "€99 one-time",
+      "priceValue": "11900",
+      "features": [
+        "Do 5 korisnika",
+        "Sve iz Basic paketa",
+        "OCR skener saobraćajne dozvole",
+        "Kompletan magacin delova",
+        "Klijentski link (Live Status)",
+        "Automatski podsetnici",
+        "Napredna analitika",
+        "Prioritetna podrška"
+      ],
+      "features_en": [
+        "Up to 5 users",
+        "Everything from Basic",
+        "Vehicle registration OCR",
+        "Full parts inventory",
+        "Customer live status link",
+        "Automated reminders",
+        "Advanced analytics",
+        "Priority support"
+      ]
+    },
+    {
+      "variant": "desktop",
+      "name": "🏆 Enterprise (Desktop)",
+      "name_en": "🏆 Enterprise (Desktop)",
+      "price": "179€ jednokratno",
+      "price_en": "€179 one-time",
+      "priceValue": "21500",
+      "features": [
+        "Neograničen broj korisnika",
+        "Sve iz Pro paketa",
+        "B2B portal za vozne parkove",
+        "Dnevni automatizovani bekap",
+        "Prilagođeno brendiranje",
+        "Direktna podrška i onboarding (1h)",
+        "Pristup izvornom kodu"
+      ],
+      "features_en": [
+        "Unlimited users",
+        "Everything from Pro",
+        "B2B fleet portal",
+        "Daily automated backup",
+        "Custom branding",
+        "Direct support & onboarding (1h)",
+        "Source code access"
+      ]
+    },
+    {
+      "variant": "server",
+      "name": "🟢 Basic (Server)",
+      "name_en": "🟢 Basic (Server)",
+      "price": "49€ jednokratno",
+      "price_en": "€49 one-time",
+      "priceValue": "5900",
+      "features": [
+        "1 korisnik",
+        "Neograničen broj naloga",
+        "Digitalna servisna knjiga (VIN)",
+        "PDF radni nalozi i predračuni",
+        "Osnovni magacin (100 artikala)",
+        "Email podrška"
+      ],
+      "features_en": [
+        "1 user",
+        "Unlimited work orders",
+        "Digital service book (VIN)",
+        "PDF work orders & estimates",
+        "Basic inventory (100 items)",
+        "Email support"
+      ]
+    },
+    {
+      "variant": "server",
+      "name": "🚀 Pro (Server)",
+      "name_en": "🚀 Pro (Server)",
+      "price": "99€ jednokratno",
+      "price_en": "€99 one-time",
+      "priceValue": "11900",
+      "features": [
+        "Do 5 korisnika",
+        "Sve iz Basic paketa",
+        "OCR skener saobraćajne dozvole",
+        "Kompletan magacin delova",
+        "Klijentski link (Live Status)",
+        "Automatski podsetnici",
+        "Napredna analitika",
+        "Prioritetna podrška"
+      ],
+      "features_en": [
+        "Up to 5 users",
+        "Everything from Basic",
+        "Vehicle registration OCR",
+        "Full parts inventory",
+        "Customer live status link",
+        "Automated reminders",
+        "Advanced analytics",
+        "Priority support"
+      ]
+    },
+    {
+      "variant": "server",
+      "name": "🏆 Enterprise (Server)",
+      "name_en": "🏆 Enterprise (Server)",
+      "price": "179€ jednokratno",
+      "price_en": "€179 one-time",
+      "priceValue": "21500",
+      "features": [
+        "Neograničen broj korisnika",
+        "Sve iz Pro paketa",
+        "B2B portal za vozne parkove",
+        "Dnevni automatizovani bekap",
+        "Prilagođeno brendiranje",
+        "Direktna podrška i onboarding (1h)",
+        "Pristup izvornom kodu"
+      ],
+      "features_en": [
+        "Unlimited users",
+        "Everything from Pro",
+        "B2B fleet portal",
+        "Daily automated backup",
+        "Custom branding",
+        "Direct support & onboarding (1h)",
+        "Source code access"
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q_sr": "Da li mi treba fiskalni printer?",
+      "q_en": "Do I need a fiscal printer?",
+      "a_sr": "ServiceMasterOS je softverski sistem koji generiše podatke za fiskalni račun. Za štampu je potreban kompatibilan fiskalni printer (npr. EPSON, Gorenje).",
+      "a_en": "ServiceMasterOS is a software system that generates fiscal data. For printing, you need a compatible fiscal printer (e.g., EPSON, Gorenje)."
+    },
+    {
+      "q_sr": "Da li radi na više računara?",
+      "q_en": "Does it work on multiple computers?",
+      "a_sr": "Da, ako izaberete Server varijantu. Desktop varijanta je namenjena jednom računaru.",
+      "a_en": "Yes, if you choose the Server variant. The Desktop variant is for a single computer."
+    },
+    {
+      "q_sr": "Da li je potrebna mesečna pretplata?",
+      "q_en": "Is there a monthly subscription?",
+      "a_sr": "Ne. Ovo je jednokratna kupovina. Vi ste vlasnik licence i podataka.",
+      "a_en": "No. This is a one-time purchase. You own the license and the data."
+    }
+  ]
+}

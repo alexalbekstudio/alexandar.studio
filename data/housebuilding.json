@@ -1,0 +1,242 @@
+{
+  "hero": {
+    "title_sr": "Gradi kuću bez stresa.",
+    "title_en": "Build your house without stress.",
+    "accent_sr": "HouseBuilding",
+    "accent_en": "HouseBuilding",
+    "desc_sr": "Sveobuhvatni alat za nadzor izgradnje. Zakonske faze, mobilni OCR skener računa, interaktivna mapa i praćenje budžeta na jednom mestu.",
+    "desc_en": "Comprehensive construction supervision tool. Statutory phases, mobile OCR receipt scanner, interactive map, and budget tracking in one place.",
+    "badge_sr": "Dostupno: Cloud • Server • Desktop",
+    "badge_en": "Available: Cloud • Server • Desktop",
+    "note_sr": "✓ Setup u 1 minutu · ✓ 14 dana besplatno · ✓ Radi na terenu (PWA)",
+    "note_en": "✓ 1-minute setup · ✓ 14 days free · ✓ Works on site (PWA)"
+  },
+  "images": {
+    "hero": "../landing/img/hb-hero-1.png",
+    "feat1": "../landing/img/hb-feature-1.png",
+    "feat2": "../landing/img/hb-feature-2.png",
+    "feat3": "../landing/img/hb-feature-3.png",
+    "feat4": "../landing/img/hb-feature-4.png",
+    "feat5": "../landing/img/hb-feature-5.png"
+  },
+  "features": [
+    {
+      "icon": "🏛️",
+      "title_sr": "8 Zakonskih faza",
+      "title_en": "8 Statutory Phases",
+      "desc_sr": "Vođenje projekta od katastarske parcele do upotrebne dozvole uz automatsko ažuriranje faza i praćenje budžeta.",
+      "desc_en": "Project management from cadastral plot to occupancy permit with automatic status tracking and budget monitoring."
+    },
+    {
+      "icon": "📸",
+      "title_sr": "Mobilni OCR skener",
+      "title_en": "Mobile OCR Scanner",
+      "desc_sr": "Slikajte račun na terenu. Ugrađeni OCR automatski prepoznaje iznos, datum i PIB i popunjava formu.",
+      "desc_en": "Snap a receipt on site. Built-in OCR automatically detects the amount, date, and Tax ID and fills the form."
+    },
+    {
+      "icon": "🗺️",
+      "title_sr": "Interaktivna mapa",
+      "title_en": "Interactive Map",
+      "desc_sr": "Katalog izvođača i stovarišta sa geokodiranjem, precizno pinovanje parcele i navigacija na terenu.",
+      "desc_en": "Contractor and supply yard directory with geocoding, precise plot pinning, and field navigation."
+    },
+    {
+      "icon": "🏡",
+      "title_sr": "Više gradilišta",
+      "title_en": "Multi-Project Support",
+      "desc_sr": "Prebacivanje između paralelnih kuća ili objekata u jednom kliku, uz potpuno izolovane podatke.",
+      "desc_en": "Seamless switching between parallel houses or properties in a single click with completely isolated data."
+    }
+  ],
+  "pricing": [
+    {
+      "type": "cloud",
+      "name": "🎯 Graditelj (Cloud)",
+      "name_en": "🎯 Builder (Cloud)",
+      "price": "9€/mesec",
+      "price_en": "€9/month",
+      "priceValue": "1080",
+      "features": [
+        "1 aktivno gradilište",
+        "Svih 8 zakonskih faza",
+        "Mobilni OCR (50 skeniranja)",
+        "Arhiva dokumenata (1 GB)",
+        "Interaktivna mapa",
+        "Podrška: email (48h)"
+      ],
+      "features_en": [
+        "1 active construction site",
+        "All 8 statutory phases",
+        "Mobile OCR (50 scans)",
+        "Document archive (1 GB)",
+        "Interactive map",
+        "Support: email (48h)"
+      ]
+    },
+    {
+      "type": "cloud",
+      "name": "🚀 Investitor Pro (Cloud)",
+      "name_en": "🚀 Investor Pro (Cloud)",
+      "price": "19€/mesec",
+      "price_en": "€19/month",
+      "priceValue": "2280",
+      "features": [
+        "Do 3 paralelna gradilišta",
+        "Neograničen OCR skener",
+        "Napredni Gantt i alarmi",
+        "Katalog materijala",
+        "Neograničena arhiva",
+        "CSV izvoz",
+        "Podrška: email (24h)"
+      ],
+      "features_en": [
+        "Up to 3 parallel sites",
+        "Unlimited OCR scanning",
+        "Advanced Gantt & alerts",
+        "Material catalog",
+        "Unlimited archive",
+        "CSV export",
+        "Support: email (24h)"
+      ]
+    },
+    {
+      "type": "cloud",
+      "name": "🏆 Preduzimač (Cloud)",
+      "name_en": "🏆 Contractor (Cloud)",
+      "price": "39€/mesec",
+      "price_en": "€39/month",
+      "priceValue": "4680",
+      "features": [
+        "Neograničen broj gradilišta",
+        "Sve iz Pro paketa",
+        "Višekorisnički pristup",
+        "Dnevni bekap baze",
+        "Prilagođeno brendiranje",
+        "Video onboarding (1h)"
+      ],
+      "features_en": [
+        "Unlimited construction sites",
+        "Everything from Pro",
+        "Multi-user access",
+        "Daily database backup",
+        "Custom branding",
+        "Video onboarding (1h)"
+      ]
+    },
+    {
+      "type": "cloud",
+      "name": "🏆 Preduzimač (Cloud)",
+      "name_en": "🏆 Contractor (Cloud)",
+      "price": "49€/mesec",
+      "price_en": "€49/month",
+      "priceValue": "4680",
+      "features": [
+        "Namenska instanca (Dedicated VPS)",
+        "Self-hosted opcija (Docker Compose)",
+        "Prilagođene integracije sa knjigovodstvenim softverima",
+        "SLA garancija"
+      ],
+      "features_en": [
+        "Dedicated VPS", 
+        "Self-hosted option (Docker Compose)", 
+        "Custom integrations with accounting software", 
+        "SLA Guarantee"
+      ]
+    },
+    {
+      "type": "standalone",
+      "name": "🎯 Osnovni Graditelj",
+      "name_en": "🎯 Basic Builder",
+      "price": "79€ jednokratno",
+      "price_en": "€79 one-time",
+      "priceValue": "9500",
+      "features": [
+        "1 aktivno gradilište (2 godine)",
+        "Svih 8 zakonskih faza",
+        "Osnovni OCR skener",
+        "Arhiva dokumenata (2 GB)",
+        "Interaktivna mapa",
+        "Email podrška"
+      ],
+      "features_en": [
+        "1 active site (2 years)",
+        "All 8 statutory phases",
+        "Standard OCR scanner",
+        "Document archive (2 GB)",
+        "Interactive map",
+        "Email support"
+      ]
+    },
+    {
+      "type": "standalone",
+      "name": "🚀 Investitor Pro",
+      "name_en": "🚀 Investor Pro",
+      "price": "149€ jednokratno",
+      "price_en": "€149 one-time",
+      "priceValue": "17900",
+      "features": [
+        "Do 3 paralelna gradilišta",
+        "Neograničen OCR skener",
+        "Napredni Gantt i alarmi",
+        "Katalog materijala",
+        "Neograničena arhiva",
+        "CSV i PDF izvoz",
+        "Prioritetna podrška"
+      ],
+      "features_en": [
+        "Up to 3 parallel sites",
+        "Unlimited OCR scanning",
+        "Advanced Gantt & alerts",
+        "Material catalog",
+        "Unlimited archive",
+        "CSV & PDF export",
+        "Priority support"
+      ]
+    },
+    {
+      "type": "standalone",
+      "name": "🏆 Preduzimač & Prof.",
+      "name_en": "🏆 Contractor & Pro.",
+      "price": "199€ jednokratno",
+      "price_en": "€199 one-time",
+      "priceValue": "23900",
+      "features": [
+        "Neograničen broj gradilišta",
+        "Sve iz Pro paketa",
+        "Višekorisnički pristup",
+        "Dnevni bekap baze",
+        "Prilagođeno brendiranje",
+        "Direktna podrška"
+      ],
+      "features_en": [
+        "Unlimited construction sites",
+        "Everything from Pro",
+        "Multi-user access",
+        "Daily database backup",
+        "Custom branding",
+        "Direct support"
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q_sr": "Da li mi treba instalacija?",
+      "q_en": "Do I need to install anything?",
+      "a_sr": "Ne. HouseBuilding je PWA (Progressive Web App). Instalirate ga direktno kroz browser na telefonu ili računaru, bez potrebe za App Store-om ili Google Play-om.",
+      "a_en": "No. HouseBuilding is a PWA (Progressive Web App). Install it directly through your browser on your phone or computer, without the need for an App Store or Google Play."
+    },
+    {
+      "q_sr": "Kako radi OCR skener?",
+      "q_en": "How does the OCR scanner work?",
+      "a_sr": "Otvorite kameru na telefonu, uslikajte račun, i ugrađeni Tesseract OCR algoritam će automatski prepoznati iznos i datum i popuniti formu umesto vas.",
+      "a_en": "Open your phone's camera, snap a photo of the receipt, and the built-in Tesseract OCR algorithm will automatically detect the amount and date, filling out the form for you."
+    },
+    {
+      "q_sr": "Da li mogu da vodim više gradilišta?",
+      "q_en": "Can I manage multiple construction sites?",
+      "a_sr": "Da, u zavisnosti od paketa. Pro i Preduzimač paketi nude mogućnost vođenja više paralelnih gradilišta sa potpuno izolovanim podacima.",
+      "a_en": "Yes, depending on the package. The Pro and Contractor packages offer the ability to manage multiple parallel sites with completely isolated data."
+    }
+  ]
+}

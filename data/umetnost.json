@@ -1,0 +1,21 @@
+{
+  "header": {
+    "badge_sr": "",
+    "badge_en": "",
+    "title_sr": "",
+    "title_en": "",
+    "desc_sr": "",
+    "desc_en": ""
+  },
+  "gallery": [
+    {
+      "id": "img-1794843317159",
+      "image": "/uploads/1794843340295-0db9b2ad2d3148dd1ee9a64372d806b7.jpg",
+      "title": "Novi rad",
+      "category": "Kategorija / 2026",
+      "desc_sr": "",
+      "desc_en": "",
+      "filter_tag": "ilustracija"
+    }
+  ]
+}

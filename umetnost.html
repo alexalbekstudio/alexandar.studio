@@ -3,67 +3,198 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Umetnost | Aleksandar Studio</title>
-  <meta name="description" content="Autorski umetnički radovi, digitalna ilustracija i kreativne vizuelne forme.">
+  <title>Alexandar Studio | Software & SaaS Architecture</title>
+  <meta name="description" content="Alexandar Studio - Specijalizovan za razvoj SaaS rešenja, brze API servise, PWA aplikacije i Cloud infrastrukturu.">
+
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="img/logo-a.png">
+
+  <!-- Fonts & Tailwind -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            space: '#020308',
+            accent: {
+              cyan: '#38bdf8',
+              emerald: '#10b981',
+              gold: '#d4af37',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Three.js Import Map -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
 </head>
-<body class="selection:bg-purple-500/30 selection:text-purple-200">
+<body class="selection:bg-cyan-500/30 selection:text-cyan-200">
+
+  <!-- 3D Three.js Galaxy Background -->
   <div id="webgl-bg"></div>
+
+  <!-- Glavni sloj sadržaja -->
   <div class="content-layer">
-    <!-- Header -->
+
+    <!-- Zaglavlje / Navigacija -->
     <header class="sticky top-0 z-50 glass-nav">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        
+        <!-- Logo & Brand -->
         <a href="index.html" class="flex items-center gap-2.5 group">
-          <img src="img/logo-a.png" alt="A" class="h-10 w-auto object-contain">
-          <span class="text-xs font-mono tracking-[0.25em] text-slate-400 font-semibold uppercase">STUDIO</span>
+          <!-- Monogram A -->
+          <img src="img/logo-a.png" alt="A" class="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-[0_0_8px_rgba(212,175,55,0.4)]">
+          
+          <div class="flex items-center gap-2">
+          <!-- Slika ALEXANDAR smanjena na h-5.5 / h-6 -->
+          <img src="img/logo-text.png" alt="Alexandar" class="h-5 sm:h-6 w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-[0_0_8px_rgba(212,175,55,0.4)]">
+          
+          <!-- STUDIO fino usklađen uz novu visinu -->
+          <span class="text-[10px] font-mono tracking-[0.25em] text-slate-400 font-semibold uppercase group-hover:text-cyan-400 transition-colors">
+            STUDIO
+          </span>
+          </div>
         </a>
         <nav class="hidden md:flex items-center gap-8">
-          <a href="index.html" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Početna</a>
-          <a href="dizajn.html" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Dizajn</a>
-          <a href="umetnost.html" class="text-sm font-medium text-purple-400 font-semibold transition-colors">Umetnost</a>
-          <a href="index.html#kontakt" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Kontakt</a>
+          <a href="index.html#projects" class="text-sm font-medium text-slate-300 hover:text-white transition-colors" data-i18n="nav_projects">Projects</a>
+          <a href="index.html#stack" class="text-sm font-medium text-slate-300 hover:text-white transition-colors" data-i18n="nav_stack">Tech Stack</a>
+          <a href="index.html#mreze" class="text-sm font-medium text-slate-300 hover:text-white transition-colors" data-i18n="nav_networks">Networks</a>
+          <a href="dizajn.html" class="text-sm font-medium text-slate-300 hover:text-amber-400 transition-colors" data-i18n="nav_design">Dizajn</a>
+          <a href="umetnost.html" class="text-sm font-medium text-purple-400 font-semibold transition-colors" data-i18n="nav_art">Umetnost</a>
+          <a href="index.html#kontakt" class="text-sm font-medium text-slate-300 hover:text-white transition-colors" data-i18n="nav_contact">Contact</a>
         </nav>
+        <div class="flex items-center gap-3">
+          <button id="langToggle" class="px-3 py-1.5 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 text-xs font-mono font-semibold transition-colors flex items-center gap-1.5">
+            <span id="langCurrent" class="text-purple-400">SR</span>
+            <span class="text-slate-500">/</span>
+            <span class="text-slate-400">EN</span>
+          </button>
+        </div>
       </div>
     </header>
 
     <main class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-xs font-mono uppercase tracking-[0.25em] text-purple-400 font-semibold">Kreativni Izraz & Vizuelne Forme</span>
-        <h1 class="text-4xl sm:text-5xl font-extrabold text-white mt-3 mb-6">Umetnost & Autorski Radovi</h1>
-        <p class="text-slate-300 text-lg leading-relaxed">
+        <span class="text-xs font-mono uppercase tracking-[0.25em] text-purple-400 font-semibold" data-i18n="art_badge">Kreativni Izraz & Vizuelne Forme</span>
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-white mt-3 mb-6" data-i18n="art_title">Umetnost & Autorski Radovi</h1>
+        <p class="text-slate-300 text-lg leading-relaxed" data-i18n="art_desc">
           Istraživanje dubljih slojeva vizuelne estetike, digitalnog stvaralaštva i unikatnih umetničkih formi koje prevazilaze standardne okvire dizajna.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="rounded-2xl bg-slate-900/60 border border-slate-800 p-6 backdrop-blur-md">
-          <div class="h-48 rounded-xl bg-slate-800/50 mb-4 flex items-center justify-center text-slate-500 font-mono text-xs">[ Digitalna Ilustracija ]</div>
-          <h3 class="text-xl font-bold text-white mb-2">Digitalno Stvaralaštvo</h3>
-          <p class="text-slate-400 text-sm">Eksperimentisanje sa modernim digitalnim medijima, svetlom, formom i atmosferom.</p>
+      <!-- 1. GORNJA 4 BOX-A U JEDNOM NIZU (kao na dizajn.html) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+
+        <!-- Box 1 -->
+        <div class="group relative rounded-2xl bg-slate-900/60 border border-slate-800/80 overflow-hidden backdrop-blur-md hover:border-purple-500/50 hover:-translate-y-1.5 transition-all duration-300 shadow-xl flex flex-col justify-between p-5">
+          <div class="h-36 rounded-xl bg-slate-950/80 mb-5 overflow-hidden flex items-center justify-center border border-slate-800/50">
+            <img src="img/art-cat-1.jpg" alt="Digitalna Ilustracija" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100">
+          </div>
+          <div>
+            <a href="#galerija" data-filter="ilustracija" class="filter-btn block w-full text-center py-3 px-4 rounded-xl bg-gradient-to-r from-purple-500 to-fuchsia-500 text-slate-950 font-bold text-sm shadow-lg shadow-purple-500/20 hover:brightness-110 transition-all mb-3">
+              Digitalna Ilustracija
+            </a>
+            <p class="text-slate-400 text-xs leading-relaxed text-center">Eksperimentisanje sa modernim medijima, svetlom, formom...</p>
+          </div>
         </div>
-        <div class="rounded-2xl bg-slate-900/60 border border-slate-800 p-6 backdrop-blur-md">
-          <div class="h-48 rounded-xl bg-slate-800/50 mb-4 flex items-center justify-center text-slate-500 font-mono text-xs">[ Konceptualni Radovi ]</div>
-          <h3 class="text-xl font-bold text-white mb-2">Konceptualne Forme</h3>
-          <p class="text-slate-400 text-sm">Vizuelne priče koje spajaju tehničku preciznost i slobodnu umetničku ekspresiju.</p>
+
+        <!-- Box 2 -->
+        <div class="group relative rounded-2xl bg-slate-900/60 border border-slate-800/80 overflow-hidden backdrop-blur-md hover:border-purple-500/50 hover:-translate-y-1.5 transition-all duration-300 shadow-xl flex flex-col justify-between p-5">
+          <div class="h-36 rounded-xl bg-slate-950/80 mb-5 overflow-hidden flex items-center justify-center border border-slate-800/50">
+            <img src="img/art-cat-2.jpg" alt="Konceptualni Radovi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100">
+          </div>
+          <div>
+            <a href="#galerija" data-filter="konceptualno" class="filter-btn block w-full text-center py-3 px-4 rounded-xl bg-gradient-to-r from-purple-500 to-fuchsia-500 text-slate-950 font-bold text-sm shadow-lg shadow-purple-500/20 hover:brightness-110 transition-all mb-3">
+              Konceptualni Radovi
+            </a>
+            <p class="text-slate-400 text-xs leading-relaxed text-center">Vizualne priče koje spajaju tehničku preciznost i umetničku ekspresiju.</p>
+          </div>
         </div>
-        <div class="rounded-2xl bg-slate-900/60 border border-slate-800 p-6 backdrop-blur-md">
-          <div class="h-48 rounded-xl bg-slate-800/50 mb-4 flex items-center justify-center text-slate-500 font-mono text-xs">[ Vizuelne Eksperimente ]</div>
-          <h3 class="text-xl font-bold text-white mb-2">Eksperimentalna Vizuelnost</h3>
-          <p class="text-slate-400 text-sm">Igre tekstura, kompozicije i interakcije između tradicionalnih i modernih grafičkih elemenata.</p>
+        <!-- Box 3 -->
+        <div class="group relative rounded-2xl bg-slate-900/60 border border-slate-800/80 overflow-hidden backdrop-blur-md hover:border-purple-500/50 hover:-translate-y-1.5 transition-all duration-300 shadow-xl flex flex-col justify-between p-5">
+          <div class="h-36 rounded-xl bg-slate-950/80 mb-5 overflow-hidden flex items-center justify-center border border-slate-800/50">
+            <img src="img/art-cat-3.jpg" alt="Eksperimenti" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100">
+          </div>
+          <div>
+            <a href="#galerija" data-filter="eksperimenti" class="filter-btn block w-full text-center py-3 px-4 rounded-xl bg-gradient-to-r from-purple-500 to-fuchsia-500 text-slate-950 font-bold text-sm shadow-lg shadow-purple-500/20 hover:brightness-110 transition-all mb-3">
+              Eksperimenti
+            </a>
+            <p class="text-slate-400 text-xs leading-relaxed text-center">Igre tekstura, kompozicije i interakcije između tradicionalnih i modernih formi.</p>
+          </div>
         </div>
+
+        <!-- Box 4 -->
+        <div class="group relative rounded-2xl bg-slate-900/60 border border-slate-800/80 overflow-hidden backdrop-blur-md hover:border-purple-500/50 hover:-translate-y-1.5 transition-all duration-300 shadow-xl flex flex-col justify-between p-5">
+          <div class="h-36 rounded-xl bg-slate-950/80 mb-5 overflow-hidden flex items-center justify-center border border-slate-800/50">
+            <img src="img/art-cat-4.jpg" alt="Autorske Serije" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100">
+          </div>
+          <div>
+            <a href="#galerija" data-filter="serija" class="filter-btn block w-full text-center py-3 px-4 rounded-xl bg-gradient-to-r from-purple-500 to-fuchsia-500 text-slate-950 font-bold text-sm shadow-lg shadow-purple-500/20 hover:brightness-110 transition-all mb-3">
+              Autorske Serije
+            </a>
+            <p class="text-slate-400 text-xs leading-relaxed text-center">Tematske serije radova istražuju poetiku i ritam vizuelne naracije.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 2. DONJA GALERIJA (4 SLIKE U NIZU) -->
+      <div id="galerija" class="mb-12">
+        <h2 class="text-2xl font-bold text-white mb-6 border-l-4 border-purple-500 pl-3" data-i18n="gallery_title">Galerija Radova</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <!-- Dinamički sadržaj ubacuje loader.js -->
+      </div>
+
+      <!-- Donje poveznice -->
+      <div class="text-center pt-8 border-t border-white/10 flex flex-wrap justify-center gap-4">
+        <a href="dizajn.html" class="px-6 py-3 rounded-xl border border-amber-500/30 bg-amber-950/20 text-amber-300 font-semibold text-sm hover:bg-amber-900/30 transition-all" data-i18n="link_to_design">
+          Pogledaj Grafički Dizajn →
+        </a>
+        <a href="index.html" class="px-6 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white font-semibold text-sm hover:bg-slate-800 transition-all" data-i18n="link_back_home">
+          ← Nazad na Početnu (SaaS)
+        </a>
       </div>
     </main>
 
-    <footer class="border-t border-white/10 py-12 px-4 text-center text-xs font-mono text-slate-500">
-      © 2026 alexandar.studio. Sva prava zadržana.
+    <!-- Footer -->
+    <footer class="border-t border-white/10 py-12 px-4 sm:px-6 lg:px-8 text-center">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+        
+        <div class="flex items-center gap-3">
+          <img src="img/logo-a.png" alt="A Monogram" class="h-8 w-auto object-contain">
+          <img src="img/logo-text.png" alt="Alexandar Studio" class="h-4 w-auto object-contain opacity-80">
+        </div>
+
+        <div class="text-xs font-mono text-slate-500">
+          © 2026 alexandar.studio. Sva prava zadržana.
+        </div>
+
+        <div class="text-xs font-mono text-slate-500">
+          Pančevo, Srbija / Remote Worldwide
+        </div>
+      </div>
     </footer>
   </div>
+  </div>
   <script src="js/galaxy.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/loader.js"></script>
 </body>
 </html>

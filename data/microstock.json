@@ -1,0 +1,164 @@
+{
+  "hero": {
+    "title_sr": "Upravljaj poslom bez haosa.",
+    "title_en": "Run your business without chaos.",
+    "accent_sr": "MicroStock",
+    "accent_en": "MicroStock",
+    "desc_sr": "Zalihe, narudžbine, projekti i finansije — sve na jednom mestu. Lagani web alat za male online prodavce, agencije i zanatlije.",
+    "desc_en": "Stock, orders, projects, and finances — all in one place. A lightweight web tool for small online sellers, agencies, and artisans.",
+    "badge_sr": "Dostupno: Cloud • Server • Desktop",
+    "badge_en": "Available: Cloud • Server • Desktop",
+    "note_sr": "✓ Bez kartice · ✓ Setup u 5 minuta · ✓ Otkaži kad hoćeš",
+    "note_en": "✓ No credit card · ✓ 5-minute setup · ✓ Cancel anytime"
+  },
+  "images": {
+    "hero": "../img/ms-hero-1.jpg",
+    "feature1": "../img/ms-feature-1.jpg",
+    "feature2": "../img/ms-feature-2.jpg",
+    "feature3": "../img/ms-feature-3.jpg",
+    "feature4": "../img/ms-feature-4.jpg",
+    "feature5": "../img/ms-feature-5.jpg"
+  },
+  "features": [
+    {
+      "icon": "📦",
+      "title_sr": "Zalihe i narudžbine",
+      "title_en": "Stock & Orders",
+      "desc_sr": "Vodi proizvode, narudžbine i kanale prodaje (Etsy, Shopify, Instagram). Automatsko smanjenje zaliha i PDF fakture.",
+      "desc_en": "Manage products, orders, and sales channels (Etsy, Shopify, Instagram). Automatic stock deduction and PDF invoices."
+    },
+    {
+      "icon": "📊",
+      "title_sr": "Analitika prodaje",
+      "title_en": "Sales Analytics",
+      "desc_sr": "Vidi tačno koliko zarađuješ, koji kanal donosi najviše i koji proizvodi gube novac. Prihod, profit i marža.",
+      "desc_en": "See exactly how much you earn, which channel brings the most, and which products lose money. Revenue, profit, and margin."
+    },
+    {
+      "icon": "📁",
+      "title_sr": "Praćenje projekata",
+      "title_en": "Project Tracking",
+      "desc_sr": "Za agencije i konsultante — prati sate, troškove i profit po projektu uz automatski alarm za prekoračenje budžeta.",
+      "desc_en": "For agencies and consultants — track hours, costs, and profit per project with automatic budget alerts."
+    },
+    {
+      "icon": "🏢",
+      "title_sr": "Nabavka i dobavljači",
+      "title_en": "Purchases & Suppliers",
+      "desc_sr": "Imenik dobavljača, računi nabavke sa upload-om skeniranih računa i precizno praćenje dugovanja.",
+      "desc_en": "Supplier directory, purchase invoices with scanned document upload, and precise debt tracking."
+    }
+  ],
+  "pricing": [
+    {
+      "type": "cloud",
+      "name": "🎯 Starter (Cloud)",
+      "price": "5€/mesec",
+      "price_en": "€5/month",
+      "priceValue": "600",
+      "features": [
+        "1 korisnik", "Do 50 proizvoda", "Do 100 narudžbina mesečno", "Osnovna analitika", "PDF fakture", "Multi-currency", "Podrška: email (48h)"
+      ],
+      "features_en": [
+        "1 user", "Up to 50 products", "Up to 100 orders/month", "Basic analytics", "PDF invoices", "Multi-currency", "Support: email (48h)"
+      ]
+    },
+    {
+      "type": "cloud",
+      "name": "🚀 Pro (Cloud)",
+      "price": "10€/mesec",
+      "price_en": "€10/month",
+      "priceValue": "1200",
+      "features": [
+        "Do 5 korisnika", "Neograničeno proizvoda", "Neograničeno narudžbina", "Napredna analitika", "Projekti i troškovi", "Nabavka + dobavljači", "Import iz CSV", "QR skener", "PDF izveštaji", "Podrška: email (24h)"
+      ],
+      "features_en": [
+        "Up to 5 users", "Unlimited products", "Unlimited orders", "Advanced analytics", "Projects & expenses", "Purchases + suppliers", "CSV import", "QR scanner", "PDF reports", "Support: email (24h)"
+      ]
+    },
+    {
+      "type": "cloud",
+      "name": "🏆 Business (Cloud)",
+      "price": "20€/mesec",
+      "price_en": "€20/month",
+      "priceValue": "2400",
+      "features": [
+        "Neograničeno korisnika", "Sve iz Pro paketa", "Prioritetna podrška (12h)", "Prilagođeni izveštaji", "Backup na dnevnom nivou", "Onboarding (video poziv 1h)", "Prilagođavanja"
+      ],
+      "features_en": [
+        "Unlimited users", "Everything from Pro", "Priority support (12h)", "Custom reports", "Daily backup", "Onboarding (1h video call)", "Customizations"
+      ]
+    },
+    {
+      "type": "cloud",
+      "name": "💼 Enterprise (Cloud)",
+      "price": "30€/mesec",
+      "priceValue": "3600",
+      "features": [
+        "Dedicated instanca", "Self-hosted opcija (Docker)", "Custom razvoj", "SLA garancija", "Cena na upit"
+      ],
+      "features_en": [
+        "Dedicated instance", "Self-hosted option (Docker)", "Custom development", "SLA guarantee", "Price on request"
+      ]
+    },
+    {
+      "type": "standalone",
+      "name": "🟢 Core (Standalone)",
+      "price": "49€ jednokratno",
+      "price_en": "€49 one-time",
+      "priceValue": "5900",
+      "features": [
+        "1 korisnik (Desktop)", "Zalihe i proizvodi", "Narudžbine i PDF fakture", "Osnovni pregled prodaje", "Multi-currency", "Dvojezični interfejs"
+      ],
+      "features_en": [
+        "1 user (Desktop)", "Stock & products", "Orders & PDF invoices", "Basic sales overview", "Multi-currency", "Bilingual interface"
+      ]
+    },
+    {
+      "type": "standalone",
+      "name": "🔵 Pro (Standalone)",
+      "price": "99€ jednokratno",
+      "price_en": "€99 one-time",
+      "priceValue": "11900",
+      "features": [
+        "Sve iz Core paketa", "Modul: Nabavka i dobavljači", "Modul: Napredna analitika", "Masovni CSV uvoz + QR skener", "Sopstveni SMTP i NBS API", "Do 5 korisnika (Mrežni rad)"
+      ],
+      "features_en": [
+        "Everything from Core", "Module: Purchases & suppliers", "Module: Advanced analytics", "Bulk CSV import + QR scanner", "Own SMTP & NBS API", "Up to 5 users (LAN)"
+      ]
+    },
+    {
+      "type": "standalone",
+      "name": "🟣 Ultimate (Standalone)",
+      "price": "179€ jednokratno",
+      "price_en": "€179 one-time",
+      "priceValue": "21500",
+      "features": [
+        "Sve iz Pro paketa", "Modul: Praćenje projekata", "Neograničen broj korisnika", "Self-Hosted Server (Docker)", "Automatski dnevni backup", "Pristup izvornom kodu"
+      ],
+      "features_en": [
+        "Everything from Pro", "Module: Project tracking", "Unlimited users", "Self-Hosted Server (Docker)", "Automatic daily backup", "Source code access"
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q_sr": "Da li treba da instaliram nešto?",
+      "q_en": "Do I need to install anything?",
+      "a_sr": "Ne. MicroStock Cloud radi u browseru. Otvoriš link, prijaviš se i počneš. Desktop verzija se instalira jednim klikom na .exe fajl.",
+      "a_en": "No. MicroStock Cloud runs in your browser. Open the link, sign in, and start. The Desktop version installs with a single click on the .exe file."
+    },
+    {
+      "q_sr": "Šta se dešava ako prekinem pretplatu?",
+      "q_en": "What happens if I cancel my subscription?",
+      "a_sr": "Podaci ostaju sačuvani 30 dana. Možeš da ih izvezeš u CSV-u u svakom trenutku. Ako kupiš Standalone verziju, podaci su zauvek tvoji.",
+      "a_en": "Data is kept for 30 days. You can export it to CSV at any time. If you purchase the Standalone version, the data is yours forever."
+    },
+    {
+      "q_sr": "Da li radi na telefonu?",
+      "q_en": "Does it work on my phone?",
+      "a_sr": "Da. MicroStock je PWA — instaliraš ga kao aplikaciju na home screen. Radi i offline za osnovne stvari, a tu je i ugrađeni QR skener.",
+      "a_en": "Yes. MicroStock is a PWA — install it as an app on your home screen. It works offline for basic tasks, and there's a built-in QR scanner."
+    }
+  ]
+}
