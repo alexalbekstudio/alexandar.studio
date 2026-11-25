@@ -83,22 +83,21 @@ function requireAuth(req, res, next) {
 
 app.post('/api/login', (req, res) => {
   const { username, password } = req.body || {};
-
-  // Provjerava da li su podaci pravilni
   if (!username || !password) {
     return res.status(400).json({ error: 'Nedostaju podaci.' });
   }
 
-  // Hardkodirano — samo za testiranje
-  if (username === 'aleksandar' && password === 'Alex@+65!') {
-    req.session.loggedIn = true;
-    req.session.user = username;
-    res.json({ ok: true });
-    return;
+  if (username !== process.env.ADMIN_USER) {
+    return res.status(401).json({ error: 'Pogrešni podaci.' });
   }
 
-  // Ako ne uspije — vrati grešku
-  return res.status(401).json({ error: 'Pogrešni podaci.' });
+  if (!bcrypt.compareSync(password, process.env.ADMIN_HASH)) {
+    return res.status(401).json({ error: 'Pogrešni podaci.' });
+  }
+
+  req.session.loggedIn = true;
+  req.session.user = username;
+  res.json({ ok: true });
 });
 
 app.post('/api/logout', (req, res) => {
