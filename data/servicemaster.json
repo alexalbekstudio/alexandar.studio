@@ -12,11 +12,12 @@
     "note_en": "✓ No monthly subscription · ✓ Self-hosted · ✓ Invoicing"
   },
   "images": {
-    "hero": "../landing/img/sm-hero-1.jpg",
-    "feat1": "../landing/img/sm-feature-1.jpg",
-    "feat2": "../landing/img/sm-feature-2.jpg",
-    "feat3": "../landing/img/sm-feature-3.jpg",
-    "feat4": "../landing/img/sm-feature-4.jpg"
+    "hero": "../landing/img/sm-hero-1.png",
+    "feat1": "../landing/img/sm-feature-1.png",
+    "feat2": "../landing/img/sm-feature-2.png",
+    "feat3": "../landing/img/sm-feature-3.png",
+    "feat4": "../landing/img/sm-feature-4.png",
+    "feat5": "../landing/img/sm-feature-5.png"
   },
   "features": [
     {
