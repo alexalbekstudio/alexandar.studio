@@ -32,7 +32,7 @@ function renderLandingPage(data) {
   
   // 1. Učitavanje slika
   if (data.images) {
-    if (data.images.hero && document.getElementById('img-hero')) document.getElementById('img-hero').src = data.images.hero;
+    if (data.images.hero && document.getElementById('img-hero-1')) document.getElementById('img-hero-1').src = data.images.hero;
     if (data.images.feat1 && document.getElementById('img-feat-1')) document.getElementById('img-feat-1').src = data.images.feat1;
     if (data.images.feat2 && document.getElementById('img-feat-2')) document.getElementById('img-feat-2').src = data.images.feat2;
     if (data.images.feat3 && document.getElementById('img-feat-3')) document.getElementById('img-feat-3').src = data.images.feat3;
